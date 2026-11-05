@@ -1,0 +1,84 @@
+/* =========================================
+   HEADER GLOBAL
+   ========================================= */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #0a6e2c; /* Vert foncé de l'église */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Décalage du contenu principal pour ne pas être caché par le header */
+.app-main {
+  padding-top: 70px !important; 
+}
+
+/* Logo et titre */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Conteneur des icônes à droite */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Boutons d'icônes */
+.header-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  padding: 4px;
+}
+
+/* Badge rouge pour la cloche */
+.badge-notif {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #dc3545;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sélecteur de province (stylisé) */
+.header-province {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  outline: none;
+}
+
+.header-province option {
+  color: black;
+}

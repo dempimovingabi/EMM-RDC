@@ -1,0 +1,38 @@
+/* =========================================
+   STYLES POUR L'IMPRESSION (PRINT)
+   ========================================= */
+
+@media print {
+  /* On cache tout ce qui est inutile sur papier */
+  .app-header, .app-nav, button, .no-print, #toast-container {
+    display: none !important;
+  }
+
+  /* On réinitialise les marges */
+  body, html {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .app-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* On applique les variables choisies dans la modale */
+  body {
+    font-family: var(--print-font-family, 'Arial', sans-serif) !important;
+    font-size: var(--print-font-size, '14px') !important;
+  }
+
+  /* On s'assure que les tableaux ne dépassent pas */
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a6e2c">
+  <title>EMM RD CONGO</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- 1. SPLASH SCREEN -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-logo">
+      <img src="assets/img/logo.png" alt="Logo EMM" style="height: 100px; width: 100px; object-fit: contain; margin-bottom: 16px; background: white; border-radius: 12px; padding: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      <h1>EMM RD CONGO</h1>
+      <p>Chargement en cours...</p>
+    </div>
+    <div class="spinner-splash"></div>
+  </div>
+
+  <!-- 2. APPLICATION SHELL -->
+  <div id="app" class="app-container hidden">
+    
+    <header id="app-header" class="app-header hidden"></header>
+
+    <div id="offline-banner" class="offline-banner hidden">
+      📵 Mode hors ligne - Les données seront synchronisées.
+    </div>
+
+    <main id="app-main" class="app-main">
+      <!-- Le contenu s'affiche ici -->
+    </main>
+
+    <nav id="app-nav" class="app-nav hidden"></nav>
+
+  </div>
+
+  <!-- 3. CONTENEURS GLOBAUX -->
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-container" class="modal-container hidden"></div>
+
+  <!-- 4. SCRIPTS -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- 5. ENREGISTREMENT DU SERVICE WORKER (PWA) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('Service Worker enregistré avec succès:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Échec de l\'enregistrement du Service Worker:', error);
+          });
+      });
+    }
+  </script>
+
+</body>
+</html>
